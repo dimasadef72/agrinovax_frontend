@@ -13,6 +13,7 @@ const SignUp: React.FC = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    agreeToTerms: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,8 +24,9 @@ const SignUp: React.FC = () => {
   }>({ isVisible: false, message: "", type: "info" });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    const fieldValue = type === 'checkbox' ? checked : value;
+    setFormData((prev) => ({ ...prev, [name]: fieldValue }));
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
