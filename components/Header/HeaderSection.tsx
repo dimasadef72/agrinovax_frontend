@@ -39,7 +39,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm">
+    <header className="bg-white border-b border-gray-200 shadow-sm relative z-[1001]">
       <div className="w-full px-4 sm:px-6 lg:px-8" ref={mobileMenuRef}>
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}

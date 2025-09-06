@@ -120,7 +120,7 @@ const MapsSection: React.FC = () => {
   return (
     <div
       className={`w-full relative ${
-        isMobile ? "rounded-lg overflow-hidden shadow-lg mx-2" : ""
+        isMobile ? "overflow-hidden" : ""
       }`}
       style={{
         height: isMobile && viewportHeight ? `${viewportHeight}px` : "100vh",
